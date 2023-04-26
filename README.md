@@ -11,10 +11,11 @@ Wysłane przez strukture komunikaty  przekazują niezbędne informacje, które p
 
 ## Struktury
 **DANE**
+```c
 struct User{
-    int id 						- id użytkownika przydzielane jeszcze przed rejestracją
-    int reg_status; 					-jeśli uzytkownik zarejestrowany to =1 jeśli nie =0
-    char name[MAX_NAME_LENGTH]; 			- nazwa użytkownika
+    	int id						- id użytkownika przydzielane jeszcze przed rejestracją 
+    	int reg_status;					-jeśli uzytkownik zarejestrowany to =1 jeśli nie =0
+    	char name[MAX_NAME_LENGTH]; 			- nazwa użytkownika
     char private_mail[CHAT_LIMIT][2*CHAT_MSG_LENGTH];	-wiadomości prywatne wysłane do uzytkownika
 };
 
@@ -33,8 +34,9 @@ struct Server
     struct User users[USERS_LIMIT];			-użytkownicy
     struct Room rooms[ROOMS_LIMIT];			-pokoje
 };
-
+```
 **KOMUNIKATY**
+```c
 struct User_msg
 {
     long cmd; //jaka komenda				-nr zadania
@@ -51,31 +53,32 @@ struct Server_msg
 							wartości dodanie- ile komunikatów powiązanych z zadaniem jeszcze przyjedzie np. dla komendy SERVER_LIST
 							jest to ilość uzytkowników zalogowanych na serwer.	
 };							błąd może wyst
+```
 
 ## Instrukcja
 Kompilacja:
 
-gcc inf148216_k.c -o inf148216_k
-gcc inf148216_s.c -o inf148216_s
+> gcc inf148216_k.c -o inf148216_k
+> gcc inf148216_s.c -o inf148216_s
 
 ### Uruchamianie:
 
-Najpierw trzeba uruchomić server:
-./inf148216_s <nr_kolejki>
+1) Najpierw trzeba uruchomić server:
+> ./inf148216_s <nr_kolejki>
 
 np. ./inf148216_s 123
 
-Następnie można uruchamiać klientów:
+2) Następnie można już uruchamiać klientów:
 
-./inf148216_k <nr_kolejki> 
+> ./inf148216_k <nr_kolejki> 
 
 np. ./inf148216_k 123
 
 Numer kolejki powinien być taki sam.
 
-Aby zakończyć prace użytkownik musi się wylogować cmd: 11
+3) Aby zakończyć prace użytkownik musi się wylogować cmd: 11
 
-Aby wyłączyć server należy skorzystać z kombinacji klawiszy ctr+c
+4) Aby wyłączyć server należy skorzystać z kombinacji klawiszy ctr+c
 przed następnym uruchomieniem trzeba usunąć kolejke komendą:
 ipcrm -q msqid lub ipcrm -a
 msqid można odczytać za pomocą komendy: ipcs -q
