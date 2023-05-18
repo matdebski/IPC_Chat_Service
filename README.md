@@ -3,7 +3,7 @@ Projekt zaliczeniowy na laboratoria z  przedmiotu Programowanie Systemowe i Wsp�
 
 ## Przebieg komunikacji:
 Komunikacja odbywa się za pomocą jednej kolejki. Po nadaniu ID(unikalne dla każdego użytkownika) użytkownicy odbierają komunikaty typu ID ze strukturą Server_msg,
-a wysyłają komunikaty typu 1-13 w zależności od wykonywanego zadania (zadania opisane w **inf148216.h**) ze strukturą User_msg. Wysyłane  przez strukture komunikaty przekazują ID użytkownika serverowi.
+a wysyłają komunikaty typu 1-13 w zależności od wykonywanego zadania (zadania opisane w **inf148216_.h**) ze strukturą User_msg. Wysyłane  przez strukture komunikaty przekazują ID użytkownika serverowi.
 Dzięki temu server wie do kogo wysłać odpowiedź zwrotną.Po odebraniu odpowiedzi program ją interpretuje i wyświetla rezultat na ekranie.
 
 Server wysyła komunikaty o typie=ID docelowego użytkownika ze strukturą Server_msg a odbiera User_msg o typu 1-13 w zależności od komendy(wyjątkiem jest komenda GET_ID gdzie server odsyła komunikat ze strukturą User_msg).
