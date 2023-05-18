@@ -58,7 +58,7 @@ struct Server_msg
 ## Instrukcja
 Kompilacja:
 
-> gcc inf148216_k.c -o inf148216_k
+> gcc inf148216_k.c -o inf148216_k <br>
 > gcc inf148216_s.c -o inf148216_s
 
 ### Uruchamianie:
