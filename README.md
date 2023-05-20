@@ -1,5 +1,7 @@
 # IPC_Chat_Service
-Projekt zaliczeniowy na laboratoria z  przedmiotu Programowanie Systemowe i Współbieżne
+
+Aplikacja pozwalająca na komunikację (chat) użytkowników, odbywającą się poprzez wymianę wiadomości pomiędzy nimi. Projekt składa się z 2 programów: klienta i serwera. Każdy klient może wysyłać i otrzymywać wiadomości do/od jednego z użytkowników systemu, lub do/od grupy składającej się z wielu użytkowników. W wymianie wiadomości pomiędzy klientami pośredniczy serwer.
+
 
 ## Przebieg komunikacji:
 Komunikacja odbywa się za pomocą jednej kolejki. Po nadaniu ID(unikalne dla każdego użytkownika) użytkownicy odbierają komunikaty typu ID ze strukturą Server_msg,
