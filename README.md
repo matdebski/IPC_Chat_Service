@@ -25,7 +25,9 @@ struct Room
 {
     char name[MAX_NAME_LENGTH];				-nazwa pokoju
     int curr_users_num;					-aktualna liczba użytkowników w pokoju
-    int users[USERS_LIMIT];				-tablica informująca czy użytkownik jest w pokoju(users[i]=1) czy go nie ma (users[i]=0)
+    int users[USERS_LIMIT];				-tablica informująca czy użytkownik jest w pokoju(users[i]=1)
+    							czy go nie ma (users[i]=0)
+    
     char chat[CHAT_LIMIT][2*CHAT_MSG_LENGTH]; 		-czat prowadzony w ramach pokoju
 };
 
@@ -50,11 +52,12 @@ struct Server_msg
 {   
     long userId; 					-do kogo server ma wysłac komunikat
     char txt[2*CHAT_MSG_LENGTH];			-odpowiedź servera
-    int r; 	 					-status wykonania komendy, w zależności od komendy, ujemne wartości oznaczają błąd, 
+    int r; 	 					-status wykonania komendy, w zależności od komendy:
+    							ujemne wartości oznaczają błąd, 
 							0- poprawne wykonanie zadania,
-							wartości dodanie- ile komunikatów powiązanych z zadaniem jeszcze przyjedzie np. dla komendy SERVER_LIST
-							jest to ilość uzytkowników zalogowanych na serwer.	
-};							błąd może wyst
+							wartości dodanie- ile komunikatów powiązanych z zadaniem jeszcze przyjedzie 
+							np. dla komendy SERVER_LIST jest to ilość  zalogowanych uzytkowników.	
+};							
 ```
 
 ## Instrukcja
